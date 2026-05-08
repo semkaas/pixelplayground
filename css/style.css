@@ -19,13 +19,16 @@
     font-size: 40px;
     
 }
+.nav1 > a:hover{
+    color: cyan;
+}
 .nav1{
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 11vw;
     margin-top: 14px;
-    margin-left: 10vw;
+
 }
 .logo{
     height: 10vh;
@@ -35,6 +38,24 @@ html{
     background-color: var(--BgColor);
 }
 .welkom{
-    font-size: 50px;
-    margin-top: 10px;
+    font-size: 35px;
+    margin-top: 19px;
+    width: 34vw;
+}
+.voet{
+    background-color: var(--BannerColor);  
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 14vh;
+    display: flex;
+    gap: 15vw;
+}
+.sec1{
+    margin-top:20px;
+    margin-right: 7vw;
+}
+.voettekst{
+    font-size: 40px;
+    margin-top: 30px;
 }
