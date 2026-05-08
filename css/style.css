@@ -1,0 +1,40 @@
+:root{
+     --BgColor: rgb(60, 60, 60);
+     --BannerColor: grey;
+}
+* {
+    margin: 0;   
+    padding: 0;
+}
+.banner1{
+    background-color: var(--BannerColor);
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+}
+.nav1 > a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    
+}
+.nav1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 11vw;
+    margin-top: 14px;
+    margin-left: 10vw;
+}
+.logo{
+    height: 10vh;
+    width: auto;
+}
+html{
+    background-color: var(--BgColor);
+}
+.welkom{
+    font-size: 50px;
+    margin-top: 10px;
+}
