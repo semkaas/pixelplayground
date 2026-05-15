@@ -14,6 +14,41 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require "dbconnect.php"; 
+    $uname = $_POST['username']; //is voor foutmelding
+    $pass = $_POST['password'];
+    
+        $sql = "SELECT * FROM gebruikers WHERE username = '$uname' AND password = '$pass'";
+        $result = $conn->query($sql);
+        if($result && $result->num_rows == 1){
+            $user = $result->fetch_assoc();
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $uname;
+            $_SESSION['ingelogd'] = true;
+            header("Location: indexlogin.php");
+        } else {
+            echo "login incorrect";
+        }
+    } 
+?>
+    
+    <form method="POST" id="login">
+        <h2 id="textlogin">New here? Try signing up instead!</h2>
+        <article>
+            <h1>USERNAME:</h1>
+            <input type="text" id="username" name="username" required>
+        </article>
+        <br>
+        <article>
+            <h1>PASSWORD:</h1>
+            <input type="password" id="password" name="password" required>
+        </article>
+        <br>
+        <button type="submit" id="submitpassword">Log in</button>
+    </form>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

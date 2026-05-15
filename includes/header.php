@@ -1,6 +1,6 @@
 <article class="banner1">
     <img class="logo" src="img/logo.png">
-    <h1 class="welkom">Welcome</h1>
+    <h1 class="welkom">Welcome, stranger</h1>
     <nav class="nav1">
         <a href="index.php">Home</a>
         <a href="games.php">Games</a>

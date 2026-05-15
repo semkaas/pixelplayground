@@ -14,6 +14,28 @@
 </head>
 <body>
     <?php include 'includes/headerloggedin.php'; ?>
+    <?php
+if (isset($_POST['action']) && $_POST['action'] === 'logout') {
+    $_SESSION = array();
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mijn Profiel</title>
+</head>
+<body>
+    <form method="POST" action="">
+        <button type="submit" name="action" value="logout" id="logoutbutton">
+            Uitloggen
+        </button>
+    </form>
+</body>
+</html>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
