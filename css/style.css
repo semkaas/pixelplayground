@@ -49,7 +49,7 @@ html{
     width: 100vw;
     height: 14vh;
     display: flex;
-    gap: 15vw;
+    gap: 5vw;
 }
 .sec1{
     margin-top:20px;
@@ -58,4 +58,7 @@ html{
 .voettekst{
     font-size: 40px;
     margin-top: 30px;
+}
+.voetvierkant{
+    font-size: 40px;
 }

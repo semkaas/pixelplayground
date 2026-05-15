@@ -2,9 +2,9 @@
     <img class="logo" src="img/logo.png">
     <h1 class="welkom">Welcome</h1>
     <nav class="nav1">
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+        <a href="index.php">Home</a>
+        <a href="games.php">Games</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Register</a>
     </nav>
 </article>
