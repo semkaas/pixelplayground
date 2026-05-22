@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+         <a href="game1logout.php">Game 1</a>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

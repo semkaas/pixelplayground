@@ -120,3 +120,60 @@ html{
     justify-content: center;
     margin-top: 10vh;
 }
+:root {
+    --corgi-font: 'Pacifico', cursive;
+    --corgi-blue: #53C6C3;
+    --corgi-candy: #FF5B80;
+}
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--corgi-font);
+    background-color: var(--corgi-blue);
+}
+
+.cookies {
+    display: flex;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--corgi-candy);
+    border-radius: 10px;
+}
+
+.cookies {
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-color: var(--corgi-candy);
+}
+
+#cookie-counter {
+    width: 80%;
+    text-align: center;
+    font-size: 42px;
+}
+
+#cookie-counter {
+    line-height: 1.4; 
+}
+
+#cookie {
+    margin-top: 50px;
+    max-width: 90%;
+    height: auto;
+}
