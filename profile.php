@@ -29,7 +29,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
     <title>Mijn Profiel</title>
 </head>
 <body>
-    <form method="POST" action="">
+    <form method="POST" action=""id="loguitknop">
         <button type="submit" name="action" value="logout" id="logoutbutton">
             Uitloggen
         </button>
