@@ -2,15 +2,30 @@
      --BgColor: rgb(60, 60, 60);
      --BannerColor: grey;
 }
+:root {
+    --corgi-font: 'Pacifico', cursive;
+    --corgi-blue: #53C6C3;
+    --corgi-candy: #FF5B80;
+}
 * {
     margin: 0;   
     padding: 0;
+}
+main{
+    min-height: 80vh;
+    margin-top: 10vh;
+}
+.gameknop1{
+    display: block;
+    margin-top: 20vh;
 }
 .banner1{
     background-color: var(--BannerColor);
     width: 100vw;
     height: 10vh;
     display: flex;
+    position: fixed;
+    top: 0;
 }
 .nav1 > a{
     display: flex;
@@ -67,6 +82,8 @@ html{
     width: 100vw;
     height: 10vh;
     display: flex;
+    position: fixed;
+    top: 0;
 }
 .nav2 > a{
     display: flex;
@@ -86,59 +103,6 @@ html{
     margin-top: 14px;
 
 }
-#login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
-}
-#username{
-    width: 15vw;
-    height: 4vh;
-}
-#password{
-    width: 15vw;
-    height: 4vh;
-}
-#submitpassword{
-    width: 15vw;
-    height: 4vh;
-    background-color: rgb(0, 0, 0);
-    font-size: large;
-    color: cyan;
-}
-#textlogin{
-    margin-bottom: 10vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
-}
-#register{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
-}
-:root {
-    --corgi-font: 'Pacifico', cursive;
-    --corgi-blue: #53C6C3;
-    --corgi-candy: #FF5B80;
-}
-
-body, html {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--corgi-font);
-    background-color: var(--corgi-blue);
-}
-
 .cookies {
     display: flex;
 }
@@ -176,4 +140,5 @@ body, html {
     margin-top: 50px;
     max-width: 90%;
     height: auto;
+    margin-left: 38vw;
 }

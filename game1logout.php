@@ -14,12 +14,22 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
-    <header class="title">Cute Corgi Bakery</header>                
+     <header class="title">Cute Corgi Bakery</header>                
         <detail class="cookies">
             <div id="cookie-counter">0</div>
             cookies
         </detail>
         <img id="cookie" src="img/ccookie.png" alt="cookie">
+       </header>
+    <script>
+        cookie = document.querySelector("#cookie");
+counter = document.querySelector("#cookie-counter");
+count = 0;
+cookie.addEventListener("click", kaas);
+function kaas(){
+counter.innerHTML = count++;
+}
+    </script>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
