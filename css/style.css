@@ -37,6 +37,48 @@ main{
 .nav1 > a:hover{
     color: cyan;
 }
+#login{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#register{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#textlogin{
+    margin-bottom: 5vh;
+    font-size: 5dvb;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#username{
+    border: solid black;
+    border-radius: 10px;
+    height: 2vh;
+    width: 13vw;
+}
+#password{
+    border: solid black;
+    border-radius: 10px;
+    height: 2vh;
+    width: 13vw;
+}
+#submitpassword{
+    color: cyan;
+    background-color: black;
+    width: 8vw;
+    height: 4vh;
+    font-size: larger;
+    border: solid cyan;
+    border-radius: 10px;
+    margin-right: 1vw;
+    margin-top: 5vh;
+}
+
+
 .nav1{
     display: flex;
     justify-content: center;
@@ -142,3 +184,4 @@ html{
     height: auto;
     margin-left: 38vw;
 }
+
