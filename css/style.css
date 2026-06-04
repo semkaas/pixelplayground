@@ -5,7 +5,7 @@
 :root {
     --corgi-font: 'Pacifico', cursive;
     --corgi-blue: #53C6C3;
-    --corgi-candy: #FF5B80;
+    --corgi-candy: #f5c730;
 }
 * {
     margin: 0;   
@@ -198,8 +198,8 @@ html{
 
 #cookie {
     margin-top: 50px;
-    max-width: 90%;
+    width: 50vw;
     height: auto;
-    margin-left: 38vw;
+    margin-left: 26vw;
 }
 

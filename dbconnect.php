@@ -1,6 +1,6 @@
 <?php
 try{
-    $conn = new mysqli("localhost", "root", "", "phples");
+    $conn = new mysqli("localhost", "root", "", "pixelplayground");
 }
 catch (Exception $e){
     echo "connection not good";
