@@ -13,7 +13,81 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
+    <style>
+  body {
+    text-align: center;
+    background-color: cyan;
+  }
+  #game2 {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+  }
+  .target {
+    background: #e74c3c;
+  }
+  #score2 {
+    font-size: 22px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  #tekstgame2 {
+    font-size: 60px;
+  }
+  #gameplay{
+    height: 100vh;
+  }
+  #kaas{
+    margin-bottom: 300px;
+  }
+</style>
+    <section id ="gameplay">
+        <p id="kaas">kaas<p>
+        <h2 id="tekstgame2">klik op de juiste circel</h2>
+        <article id="score2">Score: 0</article>
+        <article id="game2"></article>
+        <p id="result"></p>
+        <a class="gameknop2" href="games.php">TERUG NAAR GAMES</a>
+    </section>
+<script>
+  const game = document.getElementById("game2");
+  const result = document.getElementById("result");
+  const scoreDisplay = document.getElementById("score2");
+  let score = 0;
+
+  function kaas() {
+    game.innerHTML = "";
+    result.textContent = "";
+    const targetIndex = Math.floor(Math.random() * 5);
+    for (let i = 0; i < 5; i++) {
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      if (i === targetIndex) circle.classList.add("target");
+      game.appendChild(circle);
+    }
+  }
+  game.addEventListener("click", function (e) {
+    if (e.target.classList.contains("target")) {
+      score++;
+      result.textContent = "Goed gedaan!";
+      kaas();
+    } else if (e.target.classList.contains("circle")) {
+      score = 0;
+      result.textContent = "Dat was geen rode circel, je score is 0";
+    }
+    scoreDisplay.textContent = "Score: " + score;
+  });
+  kaas();
+</script>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

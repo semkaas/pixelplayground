@@ -13,10 +13,10 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    <main>
-         <a class="gameknop1" href="game1logout.php">Game 1</a>
-    
+<?php include 'includes/header.php'; ?>
+<main>
+    <a class="gameknop1" href="game1logout.php">Game 1</a>
+    <a class="gameknop2" href="game2logout.php">Game 2</a>
 </main>
-    <?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 </html>

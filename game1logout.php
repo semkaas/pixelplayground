@@ -14,6 +14,9 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+    
+
+
      <header class="title">Cute Corgi Bakery</header>                
         <detail class="cookies">
             <div id="cookie-counter">0</div>
@@ -29,6 +32,8 @@ cookie.addEventListener("click", kaas);
 function kaas(){
 counter.innerHTML = count++;
 }
+  
+
     </script>
     <?php include 'includes/footer.php'; ?>
 </body>
