@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" data-mode="light">
+<html lang="nl" data-mode="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

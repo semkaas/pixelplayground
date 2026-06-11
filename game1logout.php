@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" data-mode="light">
+<html lang="nl" data-mode="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,12 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+    
+
+
      <header class="title">Cute Corgi Bakery</header>                
         <detail class="cookies">
-            <div id="cookie-counter">0</div>
+            <article id="cookie-counter">0</article>
             kaasblokjes
         </detail>
         <img id="cookie" src="img/ccookie.png" alt="cookie">
@@ -29,6 +32,8 @@ cookie.addEventListener("click", kaas);
 function kaas(){
 counter.innerHTML = count++;
 }
+  
+
     </script>
     <?php include 'includes/footer.php'; ?>
 </body>
