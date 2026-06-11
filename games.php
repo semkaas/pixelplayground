@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" data-mode="light">
+<html lang="nl" data-mode="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,11 @@
 <body>
 <?php include 'includes/header.php'; ?>
 <main>
-    <a class="gameknop1" href="game1logout.php">Game 1</a>
-    <a class="gameknop2" href="game2logout.php">Game 2</a>
+    <article class="gameholder">
+        <a class="gameknop1" href="game1logout.php"><img src="img/ccookie.png"></a>
+        <a class="gameknop2" href="game2logout.php"><img src="img/game2.png"></a>
+    </article>
+    <a class="highscoreknop" href="highscores.php">highscores</a>
 </main>
 <?php include 'includes/footer.php'; ?>
 </html>

@@ -1,12 +1,19 @@
-:root{
-     --BgColor: rgb(60, 60, 60);
-     --BannerColor: grey;
+:root[data-mode='light']{
+     --BgColor: rgb(124, 124, 124);
+     --BannerColor: rgb(210, 210, 210);
+     --textColor: black;
+     --borderColor: black;
 }
-:root {
-    --corgi-font: 'Pacifico', cursive;
-    --corgi-blue: #53C6C3;
-    --corgi-candy: #f5c730;
+:root[data-mode='dark']{
+     --BgColor: rgb(33, 33, 33);
+     --BannerColor: rgb(86, 86, 86);
+     --textColor: rgb(255, 255, 255);
+     --borderColor: rgb(255, 255, 255);
 }
+html {
+    color: var(--textColor) !important;
+}
+
 * {
     margin: 0;   
     padding: 0;
@@ -15,9 +22,9 @@ main{
     min-height: 80vh;
     margin-top: 10vh;
 }
-.gameknop1{
-    display: block;
-    margin-top: 20vh;
+#lightdark {
+ font-size: 1.3rem;
+ margin-top: 5vh;
 }
 .banner1{
     background-color: var(--BannerColor);
@@ -31,7 +38,7 @@ main{
 .nav1 > a{
     display: flex;
     text-decoration: none;
-    color: black;
+    color: var(--textColor);
     font-size: 40px;
     
 }
@@ -202,5 +209,25 @@ html{
     height: auto;
     margin-left: 26vw;
 }
-
-
+.gameknop2 > img{
+    width: 300px;
+    height: auto;
+}
+.gameknop1 > img{
+    width: 300px;
+    height: auto;
+}
+.gameknop2{
+    width: 300px;
+    height: auto;
+}
+.gameknop1{
+    width: 300px;
+    height: auto;
+}
+.gameholder{
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
