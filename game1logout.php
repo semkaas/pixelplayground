@@ -19,7 +19,7 @@
 
      <header class="title">Cute Corgi Bakery</header>                
         <detail class="cookies">
-            <div id="cookie-counter">0</div>
+            <article id="cookie-counter">0</article>
             kaasblokjes
         </detail>
         <img id="cookie" src="img/ccookie.png" alt="cookie">
