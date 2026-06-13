@@ -48,75 +48,86 @@
   #kaas{
     margin-bottom: 300px;
   }
+  #highscoreLokaal{
+    font-size: 50px;
+  }
 </style>
     <section id="gameplay">
         <p id="kaas">kaas</p>
         <h2 id="tekstgame2">klik op de juiste cirkel</h2>
         <article id="score2">Score: 0</article>
+        <article id="highscoreLokaal">Highscore: 0</article>
         <article id="timerDisplay">Tijd: 2.00</article>
         <article id="game2"></article>
         <p id="result"></p>
         <a class="gameknop2" href="games.php">TERUG NAAR GAMES</a>
     </section>
 <script>
-  const game = document.getElementById("game2");
-  const result = document.getElementById("result");
-  const scoreDisplay = document.getElementById("score2");
-  const timerDisplay = document.getElementById("timerDisplay");
-  
-  let score = 0;
-  let countdownInterval;
-  let timeLeft;
+ const game = document.getElementById("game2");
+const result = document.getElementById("result");
+const scoreDisplay = document.getElementById("score2");
+const timerDisplay = document.getElementById("timerDisplay");
+const highscoreLokaal = document.getElementById("highscoreLokaal");
 
-  function startTimer() {
-    clearInterval(countdownInterval); // Stop de vorige timer
-    timeLeft = 2.00;
-    timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
-
-    countdownInterval = setInterval(() => {
-      timeLeft -= 0.01;
-      
-      if (timeLeft <= 0) {
-        timeLeft = 0;
-        timerDisplay.textContent = "Tijd: 0.00";
-        clearInterval(countdownInterval);
-        score = 0;
-        scoreDisplay.textContent = "Score: " + score;
-        result.textContent = "Te laat! Je score is gereset.";
-        kaas(); // Genereer direct een nieuw veld
-      } else {
-        timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
-      }
-    }, 10);
+let score = 0;
+let countdownInterval;
+let timeLeft;
+let huidigeTopscore = localStorage.getItem("game2_topscore") || 0;
+highscoreLokaal.textContent = "Hoogste score: " + huidigeTopscore;
+function slaLokaleScoreOp(eindScore) {
+  if (eindScore > huidigeTopscore) {
+    huidigeTopscore = eindScore; 
+    localStorage.setItem("game2_topscore", huidigeTopscore);
+    highscoreLokaal.textContent = "Highscore: " + huidigeTopscore;
   }
-
-  function kaas() {
-    game.innerHTML = "";
-    const targetIndex = Math.floor(Math.random() * 5);
-    for (let i = 0; i < 5; i++) {
-      const circle = document.createElement("div");
-      circle.classList.add("circle");
-      if (i === targetIndex) circle.classList.add("target");
-      game.appendChild(circle);
+}
+function startTimer() {
+  clearInterval(countdownInterval); 
+  timeLeft = 1.50;
+  timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
+  countdownInterval = setInterval(() => {
+    timeLeft -= 0.01;
+    if (timeLeft <= 0) {
+      timeLeft = 0;
+      timerDisplay.textContent = "Tijd: 0.00";
+      clearInterval(countdownInterval);
+      slaLokaleScoreOp(score);
+      score = 0;             
+      scoreDisplay.textContent = "Score: " + score;
+      result.textContent = "Te laat! Je score is gereset.";
+      kaas(); 
+    } else {
+      timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
     }
-    startTimer();
+  }, 10);
+}
+function kaas() {
+  game.innerHTML = "";
+  const targetIndex = Math.floor(Math.random() * 5);
+  for (let i = 0; i < 5; i++) {
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    if (i === targetIndex) circle.classList.add("target");
+    game.appendChild(circle);
   }
-
-  game.addEventListener("click", function (e) {
-    if (e.target.classList.contains("target")) {
-      score++;
-      result.textContent = "Goed gedaan!";
-      scoreDisplay.textContent = "Score: " + score;
-      kaas();
-    } else if (e.target.classList.contains("circle")) {
-      score = 0;
-      result.textContent = "Dat was geen rode cirkel, je score is 0";
-      scoreDisplay.textContent = "Score: " + score;
-      kaas();
-    }
-  });
-
-  kaas();
+  startTimer();
+}
+game.addEventListener("click", function (e) {
+  if (e.target.classList.contains("target")) {
+    score++;
+    result.textContent = "Goed gedaan!";
+    scoreDisplay.textContent = "Score: " + score;
+    kaas();
+  } else if (e.target.classList.contains("circle")) {
+    slaLokaleScoreOp(score); 
+    score = 0;               
+    
+    result.textContent = "Dat was geen rode cirkel, je score is 0";
+    scoreDisplay.textContent = "Score: " + score;
+    kaas();
+  }
+});
+kaas();
 </script>
     <?php include 'includes/footer.php'; ?>
 </body>

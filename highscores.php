@@ -14,6 +14,44 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
-    <?php include 'includes/footer.php'; ?>
+    <main>
+<style>
+    h3{
+        margin-top: 15vh;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column-reverse;
+}
+    main{
+        font-size: 30px;
+    }
+    #test6{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column-reverse;
+       
+}
+
+</style>
+    <?php require "dbconnect.php"; 
+
+$query = "SELECT * FROM highscores ORDER BY highscore DESC LIMIT 15";
+$result = $conn->query($query);
+
+echo "<h3>Top 10 Highscores</h3>";
+
+while($row = $result->fetch_assoc()) {
+    echo "<article id = 'test6'>";
+    echo "Speler: " . $row['gebruiker_id'] . " | ";
+    echo "Score: " . $row['highscore'] . " | ";
+    echo "Tijd: " . $row['timestamp'];
+    echo "</article>";
+}
+?>
+</main>
+<?php include 'includes/footer.php'; ?>
+
 </body>
 </html>
