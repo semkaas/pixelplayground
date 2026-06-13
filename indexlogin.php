@@ -14,6 +14,32 @@
 </head>
 <body>
     <?php include 'includes/headerloggedin.php'; ?>
+        <h1 id="hometext">Welkom terug in PixelPlayground. De plek waar kleine games grote glimlachen brengen.  
+Deze website is gebouwd met één doel: jou een relaxte, vrolijke plek geven om even te spelen. Geen high-end graphics, geen gigantische werelden, maar twee simpele, zelfgemaakte games die precies doen wat ze moeten doen: je vermaken.
+
+PixelPlayground voelt een beetje als een digitale speeltuin. Je klikt, je probeert, je ontdekt en voor je het weet ben je weer even helemaal in het moment. De games zijn klein, maar gemaakt met liefde voor pixels, creativiteit en plezier.
+
+Of je nu komt om je score te verbeteren, even te ontsnappen aan school of werk, of gewoon nieuwsgierig bent: je bent hier altijd welkom.</h1>
+<h2 id="updatelogs"><br><br><br>Update log V(1.012)<br><br>
+<ul>
+    <li><p>Games verbeterd</p></li>
+    <li><p>Profiel uitgebreid</p></li>
+    <li><p>Database aangepast</p></li>
+    </ul>
+</h2>
+<style>
+    #hometext{
+        margin-top: 14vh;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        width: 90vw;
+        margin-left: 5vw;
+    }
+    #updatelogs{
+        width: 90vw;
+        margin-left: 5vw;
+    }
+
+</style>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

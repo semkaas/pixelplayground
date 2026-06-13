@@ -1,14 +1,14 @@
 :root[data-mode='light']{
-     --BgColor: rgb(154, 154, 154);
+     --BgColor: rgb(124, 124, 124);
      --BannerColor: rgb(210, 210, 210);
      --textColor: black;
-     --borderColor: black;
+     --borderColor: #222;
 }
 :root[data-mode='dark']{
      --BgColor: rgb(33, 33, 33);
      --BannerColor: rgb(86, 86, 86);
      --textColor: rgb(255, 255, 255);
-     --borderColor: rgb(255, 255, 255);
+     --borderColor: rgb(124, 124, 124);
 }
 html {
     color: var(--textColor) !important;
@@ -86,7 +86,7 @@ main{
     margin-top: 5vh;
 }
 #loguitknop{
-    margin-top: 30vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +99,8 @@ main{
     font-size: larger;
     border: solid crimson;
     border-radius: 10px;
-    margin-right: 1vw;
-    margin-top: 40vh;
+    margin-top: 5vh;
+    position: absolute;
 }
 .nav1{
     display: flex;
@@ -155,7 +155,7 @@ html{
 .nav2 > a{
     display: flex;
     text-decoration: none;
-    color: black;
+    color:  var(--textColor);
     font-size: 40px;
     
 }
@@ -209,25 +209,39 @@ html{
     height: auto;
     margin-left: 26vw;
 }
-.gameknop2 > img{
-    width: 300px;
-    height: auto;
+#request{
+    margin-top: 20vh;
 }
-.gameknop1 > img{
-    width: 300px;
-    height: auto;
-}
-.gameknop2{
-    width: 300px;
-    height: auto;
-}
-.gameknop1{
-    width: 300px;
-    height: auto;
+.gameknop1,
+.gameknop2 {
+    width: 350px;          
+    height: 350px;        
+    background-color: #222;
+    border-radius: 20px;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border: solid black 3px;
+    border-color: var(--borderColor);
+   
 }
 .gameholder{
-    margin-top: 20vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
+
+.gameknop1 > a > img
+{
+   width: 300px;
+    height: auto; 
+}
+.gameknop2 > a > img {
+    width: 300px;
+    height: auto;
+}
+
+

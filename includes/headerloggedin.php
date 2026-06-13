@@ -7,7 +7,7 @@ session_start();
     <nav class="nav2">
         <a href="indexlogin.php">Home</a>
         <a href="gameslogin.php">Games</a>
-        <a href="highscores.php">Highscores</a>
+        <a href="highscoreslogin.php">Highscores</a>
         <a href="profile.php">Profile</a>
     </nav>
 </article>

@@ -14,39 +14,44 @@
 </head>
 <body>
     <?php include 'includes/headerloggedin.php'; ?>
-<main>
-    <h1 id="textgames"> Pixelplayground originals<h1>
-    <article id ="naamhouder">
-    <h1 id="textkaas"> KaasKlikker<h1>
-    <h1 id="textcirkel"> CirkelMadness<h1>
-</article>
-    <section class="gameholder">
-        <article class="gameknop1">
-        <a href="game1.php"><img src="img/ccookie.png"></a>
-    </article>
-        <article class="gameknop2">
-        <a href="game2.php"><img src="img/game2.png"></a>
-    </article>
-</section>
+    <main>
 <style>
-    #textgames{
-        font-size: 50px;
+    h3{
+        margin-top: 15vh;
         display: flex;
-        align-items: center;
         justify-items: center;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: column-reverse;
+}
+    main{
+        font-size: 30px;
     }
-    #naamhouder{
+    #test6{
         display: flex;
-        flex-direction: row;
-        font-size: 22px;
-        margin-left: 29vw;
-        margin-top: 14vh;
-        gap: 67px;
-    }
-    </style>
+        justify-items: center;
+        align-items: center;
+        flex-direction: column-reverse;
+       
+}
 
+</style>
+    <?php require "dbconnect.php"; 
+
+$query = "SELECT * FROM highscores ORDER BY highscore DESC LIMIT 15";
+$result = $conn->query($query);
+
+echo "<h3>Top 10 Highscores</h3>";
+
+while($row = $result->fetch_assoc()) {
+    echo "<article id = 'test6'>";
+    echo "Speler: " . $row['gebruiker_id'] . " | ";
+    echo "Score: " . $row['highscore'] . " | ";
+    echo "Tijd: " . $row['timestamp'];
+    echo "</article>";
+}
+?>
 </main>
 <?php include 'includes/footer.php'; ?>
+
 </body>
 </html>
