@@ -19,16 +19,14 @@
     <article id ="naamhouder">
     <h1 id="textkaas"> KaasKlikker<h1>
     <h1 id="textcirkel"> CirkelMadness<h1>
+    <h1 id="textbke"> BoterkaasEI<h1>
 </article>
-    <section class="gameholder">
-        <article class="gameknop1">
-        <a href="game1.php"><img src="img/ccookie.png"></a>
+    <article class="gameholder">
+        <a class="gameknop1" href="game1.php"><img src="img/ccookie.png"></a>
+        <a class="gameknop2" href="game2.php"><img src="img/game2.png"></a>
+        <a class="gameknop3" href="game3.php"><img src="img/bke.png"></a>
     </article>
-        <article class="gameknop2">
-        <a href="game2.php"><img src="img/game2.png"></a>
-    </article>
-</section>
-<style>
+    <style>
     #textgames{
         font-size: 50px;
         display: flex;
@@ -40,7 +38,7 @@
         display: flex;
         flex-direction: row;
         font-size: 22px;
-        margin-left: 29vw;
+        margin-left: 15vw;
         margin-top: 14vh;
         gap: 67px;
     }

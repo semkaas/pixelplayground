@@ -14,6 +14,150 @@
 </head>
 <body>
     <?php include 'includes/headerloggedin.php'; ?>
+    
+<!-- styling -->
+
+<style>
+  body {
+    text-align: center;
+    margin-top: 15vh;
+  }
+  h1 { margin-bottom: 10px; }
+  #status { 
+    margin-bottom: 15px; 
+    font-size: 18px; 
+}
+  #board {
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .cell {
+    
+    border: 2px solid #333;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+  }
+  .cell.disabled {
+    cursor: default;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+
+
+
+<!-- inhoud spel -->
+
+</head>
+<body>
+
+<h1>Boter, Kaas en Eieren</h1>
+<div id="status">Speler X is aan de beurt</div>
+
+<div id="board">
+  <div class="cell" data-index="0"></div>
+  <div class="cell" data-index="1"></div>
+  <div class="cell" data-index="2"></div>
+  <div class="cell" data-index="3"></div>
+  <div class="cell" data-index="4"></div>
+  <div class="cell" data-index="5"></div>
+  <div class="cell" data-index="6"></div>
+  <div class="cell" data-index="7"></div>
+  <div class="cell" data-index="8"></div>
+</div>
+
+<button id="reset">Opnieuw spelen</button>
+
+
+<!-- Js -->
+
+<script>
+  const boardEl = document.getElementById("board");
+  const statusEl = document.getElementById("status");
+  const resetBtn = document.getElementById("reset");
+  const cells = document.querySelectorAll(".cell");
+
+  let board = ["", "", "", "", "", "", "", "", ""];
+  let currentPlayer = "X";
+  let gameOver = false;
+
+  const winPatterns = [
+    [0,1,2],[3,4,5],[6,7,8], 
+    [0,3,6],[1,4,7],[2,5,8], 
+    [0,4,8],[2,4,6]          
+  ];
+
+  function checkWin() {
+    for (let pattern of winPatterns) {
+      const [a,b,c] = pattern;
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        return board[a]; 
+      }
+    }
+    return null;
+  }
+
+  function checkDraw() {
+    return board.every(cell => cell !== "");
+  }
+
+  function handleClick(e) {
+    if (gameOver) return;
+    const cell = e.target;
+    if (!cell.classList.contains("cell")) return;
+
+    const index = cell.getAttribute("data-index");
+    if (board[index] !== "") return;
+
+    board[index] = currentPlayer;
+    cell.textContent = currentPlayer;
+
+    const winner = checkWin();
+    if (winner) {
+      statusEl.textContent = `Speler ${winner} heeft gewonnen!`;
+      gameOver = true;
+      cells.forEach(c => c.classList.add("disabled"));
+      return;
+    }
+
+    if (checkDraw()) {
+      statusEl.textContent = "Gelijkspel!";
+      gameOver = true;
+      return;
+    }
+
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    statusEl.textContent = `Speler ${currentPlayer} is aan de beurt`;
+  }
+
+  function resetGame() {
+    board = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    gameOver = false;
+    cells.forEach(c => {
+      c.textContent = "";
+      c.classList.remove("disabled");
+    });
+    statusEl.textContent = "Speler X is aan de beurt";
+  }
+
+  boardEl.addEventListener("click", handleClick);
+  resetBtn.addEventListener("click", resetGame);
+</script>
+
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

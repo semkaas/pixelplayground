@@ -60,7 +60,7 @@
         <article id="timerDisplay">Tijd: 2.00</article>
         <article id="game2"></article>
         <p id="result"></p>
-        <a class="gameknop3" href="games.php">TERUG NAAR GAMES</a>
+        <a class="gameknop4" href="games.php">TERUG NAAR GAMES</a>
     </section>
 <script>
  const game = document.getElementById("game2");

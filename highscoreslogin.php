@@ -40,7 +40,7 @@
 $query = "SELECT * FROM highscores ORDER BY highscore DESC LIMIT 15";
 $result = $conn->query($query);
 
-echo "<h3>Top 10 Highscores</h3>";
+echo "<h3>Top 10 Highest scores in Cirkelmadness of all time</h3>";
 
 while($row = $result->fetch_assoc()) {
     echo "<article id = 'test6'>";
