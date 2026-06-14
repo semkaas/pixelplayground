@@ -62,7 +62,7 @@
         <article id="timerDisplay">Tijd: 2.00</article>
         <article id="game2"></article>
         <p id="result"></p>
-        <a class="gameknop4" href="games.php">TERUG NAAR GAMES</a>
+        <a class="gameknop5" href="games.php">TERUG NAAR GAMES</a>
     </section>
 <script>
  const game = document.getElementById("game2");
@@ -76,17 +76,20 @@ let countdownInterval;
 let timeLeft;
 let huidigeTopscore = localStorage.getItem("game2_topscore") || 0;
 highscoreLokaal.textContent = "Hoogste score: " + huidigeTopscore;
+// dit laat de highscore zien die in de browser is opgeslagen met localstorage
 function slaLokaleScoreOp(eindScore) {
   if (eindScore > huidigeTopscore) {
     huidigeTopscore = eindScore; 
     localStorage.setItem("game2_topscore", huidigeTopscore);
     highscoreLokaal.textContent = "Highscore: " + huidigeTopscore;
   }
+  // de highscore wordt niet aangepast als de gehaalde score lager is dan de highscore
 }
 function startTimer() {
   clearInterval(countdownInterval); 
   timeLeft = 1.50;
   timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
+  // dit laat twee decimalen achter de comma zien terwijl er word afgetelt
   countdownInterval = setInterval(() => {
     timeLeft -= 0.01;
     if (timeLeft <= 0) {
@@ -94,21 +97,25 @@ function startTimer() {
       timerDisplay.textContent = "Tijd: 0.00";
       clearInterval(countdownInterval);
       slaLokaleScoreOp(score);
+      // de gehaalde score wordt opgeslagen maar niet vervangen als het lager is dan de hs
       score = 0;             
       scoreDisplay.textContent = "Score: " + score;
       result.textContent = "Te laat! Je score is gereset.";
       kaas(); 
     } else {
       timerDisplay.textContent = "Tijd: " + timeLeft.toFixed(2);
+      // laat de tijd zien die nog over is
     }
   }, 10);
 }
 function kaas() {
   game.innerHTML = "";
   const targetIndex = Math.floor(Math.random() * 5);
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++){
+    // math.random kiest een willekeurig getal tussen de 1 en de 5 die de cirkels moeten voorstellen
     const circle = document.createElement("div");
     circle.classList.add("circle");
+    //maakt de cirkels
     if (i === targetIndex) circle.classList.add("target");
     game.appendChild(circle);
   }
@@ -119,11 +126,12 @@ game.addEventListener("click", function (e) {
     score++;
     result.textContent = "Goed gedaan!";
     scoreDisplay.textContent = "Score: " + score;
+    //verhoogt de score als de juiste cirkel is aangeklikt
     kaas();
   } else if (e.target.classList.contains("circle")) {
     slaLokaleScoreOp(score); 
     score = 0;               
-    
+    //slaat de score op als de verkeerde cirkel is geklikt en reset de score naar 0
     result.textContent = "Dat was geen rode cirkel, je score is 0";
     scoreDisplay.textContent = "Score: " + score;
     kaas();

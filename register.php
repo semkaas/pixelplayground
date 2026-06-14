@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $foutmelding = "Gebruikersnaam is al bezet!";
         } else {
             $insert_sql = "INSERT INTO gebruikers (username, password) VALUES ('$uname', '$pass')";
+            // als de gebruiksnaam niet bezet is en beide velden zijn ingevult, maak dan het account aan
             if ($conn->query($insert_sql)) {
                 header("Location: indexlogin.php");
                 exit;

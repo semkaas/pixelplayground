@@ -214,7 +214,8 @@ html{
 }
 .gameknop1,
 .gameknop2,
-.gameknop3 {
+.gameknop3,
+.gameknop4 {
     width: 350px;          
     height: 350px;        
     background-color: #222;
@@ -245,6 +246,10 @@ html{
     height: auto;
 }
 .gameknop3 > a > img {
+    width: 300px;
+    height: auto;
+}
+.gameknop4 > a > img {
     width: 300px;
     height: auto;
 }

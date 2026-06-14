@@ -69,17 +69,17 @@
 <h1>Boter, Kaas en Eieren</h1>
 <div id="status">Speler X is aan de beurt</div>
 
-<div id="board">
-  <div class="cell" data-index="0"></div>
-  <div class="cell" data-index="1"></div>
-  <div class="cell" data-index="2"></div>
-  <div class="cell" data-index="3"></div>
-  <div class="cell" data-index="4"></div>
-  <div class="cell" data-index="5"></div>
-  <div class="cell" data-index="6"></div>
-  <div class="cell" data-index="7"></div>
-  <div class="cell" data-index="8"></div>
-</div>
+<article id="board">
+  <article class="cell" data-index="0"></article>
+  <article class="cell" data-index="1"></article>
+  <article class="cell" data-index="2"></article>
+  <article class="cell" data-index="3"></article>
+  <article class="cell" data-index="4"></article>
+  <article class="cell" data-index="5"></article>
+  <article class="cell" data-index="6"></article>
+  <article class="cell" data-index="7"></article>
+  <article class="cell" data-index="8"></article>
+</article>
 
 <button id="reset">Opnieuw spelen</button>
 
@@ -93,6 +93,7 @@
   const cells = document.querySelectorAll(".cell");
 
   let board = ["", "", "", "", "", "", "", "", ""];
+  //maakt het lege bord aan
   let currentPlayer = "X";
   let gameOver = false;
 

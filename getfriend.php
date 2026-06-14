@@ -12,3 +12,4 @@ if ($result->num_rows > 0) {
     echo json_encode(null);
 }
 ?>
+<!-- laat de vriend zien als die bestaat, anders laat niks zien -->

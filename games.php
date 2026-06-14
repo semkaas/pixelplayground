@@ -18,16 +18,19 @@ setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 d
     $lang = $_COOKIE["language"] ?? "nl"; ?>?>
 <main>
     <h1 id="textgames"> Pixelplayground originals<h1>
+    <a class="highscoreknop" href="highscores.php">highscores</a>
     <article id ="naamhouder">
     <h1 id="textkaas"> KaasKlikker<h1>
     <h1 id="textcirkel"> CirkelMadness<h1>
     <h1 id="textbke"> BoterkaasEI<h1>
+    <h1 id="textpix"> PixMan<h1>
     
 </article>
     <article class="gameholder">
         <a class="gameknop1" href="game1logout.php"><img src="img/ccookie.png"></a>
         <a class="gameknop2" href="game2logout.php"><img src="img/game2.png"></a>
         <a class="gameknop3" href="game3logout.php"><img src="img/bke.png"></a>
+        <a class="gameknop4" href="game4logout.php"><img src="img/pixman.png"></a>
     </article>
     <style>
     #textgames{
@@ -41,13 +44,16 @@ setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 d
         display: flex;
         flex-direction: row;
         font-size: 22px;
-        margin-left: 15vw;
-        margin-top: 14vh;
+        margin-left: 3vw;
+        margin-top: 10vh;
         gap: 67px;
+    }
+    .highscoreknop{
+        margin-left: 5vw;
     }
     </style>
 
-    <a class="highscoreknop" href="highscores.php">highscores</a>
+ 
 </main>
 <?php include 'includes/footer.php'; ?>
 </html>

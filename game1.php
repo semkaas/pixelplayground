@@ -17,13 +17,13 @@
     setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
     $lang = $_COOKIE["language"] ?? "nl"; ?>?>
     
-<div id="game-container">
-    <h2>Koekjes: <span id="cookie-counter">0</span></h2>
-    <p>Klikkracht: <span id="click-power">1</span></p>
+<article id="game-container">
+    <h2>kaas: <span id="cookie-counter">0</span></h2>
+    <p>kpk --> kaas per klik: <span id="click-power">1</span></p>
     <img id="cookie" src="img/ccookie.png" alt="cookie" style="width: 400px;px;cursor:pointer;">
-    <button id="upgrade">Koop Upgrade (Kost: 10)</button>
-    <button id="reset">Reset Data</button>
-</div>
+    <button id="upgrade">Koop Upgrade (Kost: 10 kaasjes)</button>
+    <button id="reset">Reset kaasblokjes</button>
+</article>
 <script>
     let count = parseInt(localStorage.getItem("cookieCount")) || 0;
     let clickPower = parseInt(localStorage.getItem("clickPower")) || 1;
@@ -32,29 +32,31 @@
     const powerEl = document.querySelector("#click-power");
     const upgradeEl = document.querySelector("#upgrade");
     const gameContainer = document.querySelector("#game-container");
+
     function updateSpel() {
         counterEl.textContent = count;
         powerEl.textContent = clickPower;
         upgradeEl.textContent = `Koop Upgrade (Kost: ${upgradeCost})`;
-
         localStorage.setItem("cookieCount", count);
         localStorage.setItem("clickPower", clickPower);
         localStorage.setItem("upgradeCost", upgradeCost);
+        // alle upgrades worden hier opgeslagen
     }
     gameContainer.addEventListener("click", function(e) {
-
+        // event listener die de klikpower berekent en uitvoert
         if (e.target.id === "cookie") {
             count += clickPower;
             updateSpel();
-}
+}           // elke klik wordt het opnieuw berekend
         else if (e.target.id === "upgrade") {
             if (count >= upgradeCost) {
                 count -= upgradeCost;
                 clickPower++;
                 upgradeCost = Math.floor(upgradeCost * 1.5);
                 updateSpel();
+                // dit is voor de upgrades van de klikpower, het heeft een vaste multiplyer
             } else {
-                alert("Niet genoeg koekjes!");
+                alert("Niet genoeg kaas");
             }
         }
         else if (e.target.id === "reset") {
@@ -62,6 +64,7 @@
             clickPower = 1;
             upgradeCost = 10;
             updateSpel();
+            // als de gebruiker op reset klikt dan word alles gereset inclusief local storage
         }
     });
     updateSpel();

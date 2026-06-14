@@ -20,6 +20,7 @@
 if (isset($_POST['action']) && $_POST['action'] === 'logout') {
     $_SESSION = array();
     session_destroy();
+    //logt je uit en stuurt je terug naar de uitgelogde versie
     header("Location: index.php");
     exit;
 }
@@ -136,17 +137,15 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
 <script>
 document.getElementById("addBtn").addEventListener("click", function () {
     const name = document.getElementById("friendInput").value;
-
+// kijkt wat er is ingevult
     fetch("getfriend.php?username=" + name)
         .then(res => res.json())
         .then(data => {
+            // dit kan ik helaas niet uitleggen
             if (data) {
                 const template = document.getElementById("friendTemplate");
                 const clone = template.content.cloneNode(true);
-
                 clone.querySelector(".username").textContent = data.username;
-                
-
                 document.getElementById("friendList").appendChild(clone);
             } else {
                 alert("Geen gebruiker met deze gebruiksnaam");
@@ -154,10 +153,6 @@ document.getElementById("addBtn").addEventListener("click", function () {
         });
 });
 </script>
-
-
-
-
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

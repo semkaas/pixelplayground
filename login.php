@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "SELECT * FROM gebruikers WHERE username = '$uname' AND password = '$pass'";
         $result = $conn->query($sql);
         if($result && $result->num_rows == 1){
+            // als er een resultaat gelijk is in de database, log dan in.
             $user = $result->fetch_assoc();
             session_start();
             $_SESSION['user_id'] = $user['id'];
