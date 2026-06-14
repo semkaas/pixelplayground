@@ -13,7 +13,9 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; 
+setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
+    $lang = $_COOKIE["language"] ?? "nl"; ?>?>
 <main>
     <h1 id="textgames"> Pixelplayground originals<h1>
     <article id ="naamhouder">

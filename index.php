@@ -13,7 +13,11 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <?php include 'includes/header.php';
+    setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
+    $lang = $_COOKIE["language"] ?? "nl";
+ ?>
+    
     <h1 id="hometext">Welkom in PixelPlayground. De plek waar kleine games grote glimlachen brengen.  
 Deze website is gebouwd met één doel: jou een relaxte, vrolijke plek geven om even te spelen. Geen high-end graphics, geen gigantische werelden, maar twee simpele, zelfgemaakte games die precies doen wat ze moeten doen: je vermaken.
 
