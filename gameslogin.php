@@ -22,6 +22,7 @@
     <h1 id="textkaas"> KaasKlikker<h1>
     <h1 id="textcirkel"> CirkelMadness<h1>
     <h1 id="textbke"> BoterkaasEI<h1>
+    <h1 id="textpix"> PixMan<h1>
 </article>
     <article class="gameholder">
         <a class="gameknop1" href="game1.php"><img src="img/ccookie.png"></a>
@@ -41,7 +42,7 @@
         display: flex;
         flex-direction: row;
         font-size: 22px;
-        margin-left: 15vw;
+        margin-left: 3vw;
         margin-top: 14vh;
         gap: 67px;
     }
