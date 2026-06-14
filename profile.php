@@ -13,7 +13,9 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/headerloggedin.php'; ?>
+    <?php include 'includes/headerloggedin.php';
+    setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
+    $lang = $_COOKIE["language"] ?? "nl"; ?> ?>
     <?php
 if (isset($_POST['action']) && $_POST['action'] === 'logout') {
     $_SESSION = array();
@@ -31,8 +33,37 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
         Uitloggen
     </button>
 </form>
+<form action="delete.php" method="post" id="accountvw">
+    <button type="submit" id="vwknop">
+        Verwijder mijn account
+    </button>
+</form>
 <body>
+    <article id="badges">
+    <h1> Jouw behaalde badges</h1>
+    <hr style="width: 20vw; border: 1px solid black;">
+    <br><br>
+    <h2>Getting there</h2>
+    <h3>score 25 behaald cirkelmadness</h3>
+    <br><br>
+    <h2>Bullseye</h2>
+    <h3>score 100 behaald cirkelmadness</h3>
+</article>
+<form action="update.php" method="post" id="wwchange">
+    <h1>Data veranderen</h1>
+    <br>
+    <h2>Nieuwe gebruikersnaam:</h2>
+    <input type="text" name="new_username" required>
+
+    <h2>Nieuw wachtwoord:</h2>
+    <input type="password" name="new_password" required>
+
+    <button type="submit">Opslaan</button>
+</form>
+
 <section id="alles">
+
+
 <h3 id="textvriend">Voeg vriend toe</h3>
 <input type="text" id="friendInput" placeholder="(username)">
 <button id="addBtn">Add friend</button>
@@ -48,6 +79,34 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
 </section>
 
  <style>
+        #vwknop{
+            margin-left: 6vw;
+            
+            color: crimson;
+            background-color: black;
+            width: 8vw;
+            height: 8vh;
+            font-size: larger;
+            border: solid crimson;
+            border-radius: 10px;
+            
+            position: absolute;
+        }
+        #accountvw{
+            margin-left: 40vw;
+            margin-top: 10vh;
+        }
+        #wwchange{
+            margin-left: 40vw;
+            
+            margin-top: 30vh;
+            
+        }
+        #badges{
+            margin-left: 70vw;
+            margin-top: 5vh;
+            position: absolute;
+        }
         #friendInput{
             border: solid black 1px;
             border-radius: 15px;
@@ -64,8 +123,9 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
        
         #alles{
             font-size: 20px;
-            margin-top: 5vh;
+            margin-top: -50vh;
             margin-left: 5vw;
+            position: absolute;
         }
         #addBtn{
             height: 35px;
@@ -85,7 +145,7 @@ document.getElementById("addBtn").addEventListener("click", function () {
                 const clone = template.content.cloneNode(true);
 
                 clone.querySelector(".username").textContent = data.username;
-                clone.querySelector(".vriendid").textContent = "ID: " + data.vriend_id;
+                
 
                 document.getElementById("friendList").appendChild(clone);
             } else {

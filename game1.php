@@ -13,26 +13,64 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/headerloggedin.php'; ?>
+    <?php include 'includes/headerloggedin.php'; 
+    setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
+    $lang = $_COOKIE["language"] ?? "nl"; ?>?>
     
-     <header class="title">Cute Corgi Bakery</header>                
-        <detail class="cookies">
-            <article id="cookie-counter">0</article>
-            kaasblokjes
-        </detail>
-        <img id="cookie" src="img/ccookie.png" alt="cookie">
-       </header>
-    <script>
-        cookie = document.querySelector("#cookie");
-counter = document.querySelector("#cookie-counter");
-count = 0;
-cookie.addEventListener("click", kaas);
-function kaas(){
-counter.innerHTML = count++;
-}
-  
+<div id="game-container">
+    <h2>Koekjes: <span id="cookie-counter">0</span></h2>
+    <p>Klikkracht: <span id="click-power">1</span></p>
+    <img id="cookie" src="img/ccookie.png" alt="cookie" style="width: 400px;px;cursor:pointer;">
+    <button id="upgrade">Koop Upgrade (Kost: 10)</button>
+    <button id="reset">Reset Data</button>
+</div>
+<script>
+    let count = parseInt(localStorage.getItem("cookieCount")) || 0;
+    let clickPower = parseInt(localStorage.getItem("clickPower")) || 1;
+    let upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 10;
+    const counterEl = document.querySelector("#cookie-counter");
+    const powerEl = document.querySelector("#click-power");
+    const upgradeEl = document.querySelector("#upgrade");
+    const gameContainer = document.querySelector("#game-container");
+    function updateSpel() {
+        counterEl.textContent = count;
+        powerEl.textContent = clickPower;
+        upgradeEl.textContent = `Koop Upgrade (Kost: ${upgradeCost})`;
 
-    </script>
+        localStorage.setItem("cookieCount", count);
+        localStorage.setItem("clickPower", clickPower);
+        localStorage.setItem("upgradeCost", upgradeCost);
+    }
+    gameContainer.addEventListener("click", function(e) {
+
+        if (e.target.id === "cookie") {
+            count += clickPower;
+            updateSpel();
+}
+        else if (e.target.id === "upgrade") {
+            if (count >= upgradeCost) {
+                count -= upgradeCost;
+                clickPower++;
+                upgradeCost = Math.floor(upgradeCost * 1.5);
+                updateSpel();
+            } else {
+                alert("Niet genoeg koekjes!");
+            }
+        }
+        else if (e.target.id === "reset") {
+            count = 0;
+            clickPower = 1;
+            upgradeCost = 10;
+            updateSpel();
+        }
+    });
+    updateSpel();
+</script>
+<style>
+    #game-container{
+        margin-top: 10vh;
+    }
+    </style>
     
     <?php include 'includes/footer.php'; ?>
 </body>

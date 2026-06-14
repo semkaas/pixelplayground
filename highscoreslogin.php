@@ -13,7 +13,9 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <?php include 'includes/headerloggedin.php'; ?>
+    <?php include 'includes/headerloggedin.php';
+    setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
+    $lang = $_COOKIE["language"] ?? "nl"; ?> ?>
     <main>
 <style>
     h3{
@@ -40,7 +42,7 @@
 $query = "SELECT * FROM highscores ORDER BY highscore DESC LIMIT 15";
 $result = $conn->query($query);
 
-echo "<h3>Top 10 Highscores</h3>";
+echo "<h3>Top 10 Highest scores in Cirkelmadness of all time</h3>";
 
 while($row = $result->fetch_assoc()) {
     echo "<article id = 'test6'>";
