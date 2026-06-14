@@ -15,10 +15,34 @@
 <body>
 <?php include 'includes/header.php'; ?>
 <main>
+    <h1 id="textgames"> Pixelplayground originals<h1>
+    <article id ="naamhouder">
+    <h1 id="textkaas"> KaasKlikker<h1>
+    <h1 id="textcirkel"> CirkelMadness<h1>
+</article>
     <article class="gameholder">
         <a class="gameknop1" href="game1logout.php"><img src="img/ccookie.png"></a>
         <a class="gameknop2" href="game2logout.php"><img src="img/game2.png"></a>
+        <a class="gameknop3" href="game3logout.php"></a>
     </article>
+    <style>
+    #textgames{
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+    }
+    #naamhouder{
+        display: flex;
+        flex-direction: row;
+        font-size: 22px;
+        margin-left: 29vw;
+        margin-top: 14vh;
+        gap: 67px;
+    }
+    </style>
+
     <a class="highscoreknop" href="highscores.php">highscores</a>
 </main>
 <?php include 'includes/footer.php'; ?>

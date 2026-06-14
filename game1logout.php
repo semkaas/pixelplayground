@@ -14,27 +14,61 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+<div id="game-container">
+    <h2>Koekjes: <span id="cookie-counter">0</span></h2>
+    <p>Klikkracht: <span id="click-power">1</span></p>
+
+    <img id="cookie" src="img/ccookie.png" alt="cookie" style="width: 400px; cursor:pointer;">
     
+    <button id="upgrade">Koop Upgrade (Kost: 10)</button>
+    <button id="reset">Reset Data</button>
+</div>
 
+<script>
 
-     <header class="title">Cute Corgi Bakery</header>                
-        <detail class="cookies">
-            <article id="cookie-counter">0</article>
-            kaasblokjes
-        </detail>
-        <img id="cookie" src="img/ccookie.png" alt="cookie">
-       </header>
-    <script>
-        cookie = document.querySelector("#cookie");
-counter = document.querySelector("#cookie-counter");
-count = 0;
-cookie.addEventListener("click", kaas);
-function kaas(){
-counter.innerHTML = count++;
-}
-  
+    let count = 0;
+    let clickPower = 1;
+    let upgradeCost = 10;
+    const counterEl = document.querySelector("#cookie-counter");
+    const powerEl = document.querySelector("#click-power");
+    const upgradeEl = document.querySelector("#upgrade");
+    const gameContainer = document.querySelector("#game-container");
+    function updateSpel() {
+        counterEl.textContent = count;
+        powerEl.textContent = clickPower;
+        upgradeEl.textContent = `Koop Upgrade (Kost: ${upgradeCost})`;
+    }
+    gameContainer.addEventListener("click", function(e) {
+        if (e.target.id === "cookie") {
+            count += clickPower;
+            updateSpel();
+        }
+        else if (e.target.id === "upgrade") {
+            if (count >= upgradeCost) {
+                count -= upgradeCost;
+                clickPower++;
+                upgradeCost = Math.floor(upgradeCost * 1.5);
+                updateSpel();
+            } else {
+                alert("Niet genoeg koekjes!");
+            }
+        }
+        else if (e.target.id === "reset") {
+            count = 0;
+            clickPower = 1;
+            upgradeCost = 10;
+            updateSpel();
+        }
+    });
 
-    </script>
+    updateSpel();
+</script>
+<style>
+#game-container{
+        margin-top: 10vh;
+    }
+    </style>
+
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
