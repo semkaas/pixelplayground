@@ -62,7 +62,7 @@ setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 d
         <article id="timerDisplay">Tijd: 2.00</article>
         <article id="game2"></article>
         <p id="result"></p>
-        <a class="gameknop4" href="games.php">TERUG NAAR GAMES</a>
+        <a class="gameknop5" href="games.php">TERUG NAAR GAMES</a>
     </section>
 <script>
  const game = document.getElementById("game2");

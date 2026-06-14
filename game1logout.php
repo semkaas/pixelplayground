@@ -17,13 +17,13 @@
     setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
     $lang = $_COOKIE["language"] ?? "nl"; ?> ?>
 <div id="game-container">
-    <h2>Koekjes: <span id="cookie-counter">0</span></h2>
-    <p>Klikkracht: <span id="click-power">1</span></p>
+    <h2>kaas: <span id="cookie-counter">0</span></h2>
+    <p>kpk --> kaas per klik: <span id="click-power">1</span></p>
 
     <img id="cookie" src="img/ccookie.png" alt="cookie" style="width: 400px; cursor:pointer;">
     
-    <button id="upgrade">Koop Upgrade (Kost: 10)</button>
-    <button id="reset">Reset Data</button>
+    <button id="upgrade">Koop Upgrade (Kost: 10 kaasjes)</button>
+    <button id="reset">Reset kaasblokjes</button>
 </div>
 
 <script>
@@ -52,7 +52,7 @@
                 upgradeCost = Math.floor(upgradeCost * 1.5);
                 updateSpel();
             } else {
-                alert("Niet genoeg koekjes!");
+                alert("Niet genoeg kaas");
             }
         }
         else if (e.target.id === "reset") {

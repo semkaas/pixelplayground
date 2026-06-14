@@ -16,3 +16,5 @@ if ($conn->query($sql) === TRUE) {
     echo "Er ging iets mis: " . $conn->error;
 }
 ?>
+<!-- isset checkt of de gebruiker ingelogd is in de sessie. -->
+<!-- verwijderd de gegevens van ingelogde gebruiker uit de database -->

@@ -6,3 +6,4 @@ catch (Exception $e){
     echo "connection not good";
 }
 ?>
+<!-- connectie aanmaken met database -->

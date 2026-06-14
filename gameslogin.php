@@ -27,6 +27,7 @@
         <a class="gameknop1" href="game1.php"><img src="img/ccookie.png"></a>
         <a class="gameknop2" href="game2.php"><img src="img/game2.png"></a>
         <a class="gameknop3" href="game3.php"><img src="img/bke.png"></a>
+        <a class="gameknop4" href="game4logout.php"><img src="img/pixman.png"></a>
     </article>
     <style>
     #textgames{
