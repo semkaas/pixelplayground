@@ -65,7 +65,7 @@
         <a class="gameknop5" href="games.php">TERUG NAAR GAMES</a>
     </section>
 <script>
- const game = document.getElementById("game2");
+const game = document.getElementById("game2");
 const result = document.getElementById("result");
 const scoreDisplay = document.getElementById("score2");
 const timerDisplay = document.getElementById("timerDisplay");

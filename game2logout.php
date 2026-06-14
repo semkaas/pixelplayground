@@ -70,7 +70,6 @@ const result = document.getElementById("result");
 const scoreDisplay = document.getElementById("score2");
 const timerDisplay = document.getElementById("timerDisplay");
 const highscoreLokaal = document.getElementById("highscoreLokaal");
-
 let score = 0;
 let countdownInterval;
 let timeLeft;

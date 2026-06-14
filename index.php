@@ -44,7 +44,6 @@ Of je nu komt om je score te verbeteren, even te ontsnappen aan school of werk, 
     }
 
 </style>
-
 <?php include 'includes/footer.php'; ?>
 </body>
 </html>

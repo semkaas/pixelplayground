@@ -13,6 +13,7 @@
     <script src="javascript/script.js" defer></script>
 </head>
 <body>
+
     <?php include 'includes/headerloggedin.php';
     setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
     $lang = $_COOKIE["language"] ?? "nl"; ?>

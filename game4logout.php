@@ -49,7 +49,6 @@
 </style>
 </head>
 <body>
-
 <h1>Pixman</h1>
 <article id="word">_ _ _ _ _</article>
 <article id="wrong-letters">Foute letters: </article>

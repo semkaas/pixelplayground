@@ -13,3 +13,4 @@ if ($result->num_rows > 0) {
 }
 ?>
 <!-- laat de vriend zien als die bestaat, anders laat niks zien -->
+ 
