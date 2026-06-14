@@ -18,3 +18,4 @@ if ($conn->query($sql) === TRUE) {
 ?>
 <!-- isset checkt of de gebruiker ingelogd is in de sessie. -->
 <!-- verwijderd de gegevens van ingelogde gebruiker uit de database -->
+ 

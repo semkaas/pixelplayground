@@ -78,7 +78,6 @@
   <article class="cell" data-index="8"></article>
 </article>
 
-
 <button id="reset">Opnieuw spelen</button>
 
 <script>

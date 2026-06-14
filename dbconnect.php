@@ -7,3 +7,4 @@ catch (Exception $e){
 }
 ?>
 <!-- connectie aanmaken met database -->
+ 

@@ -54,6 +54,5 @@ while($row = $result->fetch_assoc()) {
 ?>
 </main>
 <?php include 'includes/footer.php'; ?>
-
 </body>
 </html>

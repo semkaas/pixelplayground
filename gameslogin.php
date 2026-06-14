@@ -46,7 +46,6 @@
         gap: 67px;
     }
     </style>
-
 </main>
 <?php include 'includes/footer.php'; ?>
 </body>

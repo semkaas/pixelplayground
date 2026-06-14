@@ -83,9 +83,6 @@
 
 <button id="reset">Opnieuw spelen</button>
 
-
-<!-- Js -->
-
 <script>
   const boardEl = document.getElementById("board");
   const statusEl = document.getElementById("status");

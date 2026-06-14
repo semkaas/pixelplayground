@@ -53,7 +53,7 @@ setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 d
     }
     </style>
 
- 
+
 </main>
 <?php include 'includes/footer.php'; ?>
 </html>

@@ -61,7 +61,6 @@ if (isset($_POST['action']) && $_POST['action'] === 'logout') {
 
     <button type="submit">Opslaan</button>
 </form>
-
 <section id="alles">
 
 

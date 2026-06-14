@@ -40,7 +40,6 @@ Of je nu komt om je score te verbeteren, even te ontsnappen aan school of werk, 
         width: 90vw;
         margin-left: 5vw;
     }
-
 </style>
     <?php include 'includes/footer.php'; ?>
 </body>

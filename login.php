@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } 
 ?> 
-
     <form method="POST" id="login">
         <h2 id="textlogin">New here? Try signing up instead!</h2>
         <article>

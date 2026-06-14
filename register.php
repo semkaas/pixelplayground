@@ -45,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } 
 ?>
-
 <form method="POST" id="register">
     <h2 id="textlogin">Create an account!</h2>
     <article>

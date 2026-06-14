@@ -16,7 +16,7 @@
     <?php include 'includes/header.php';
     setcookie("language", "nl", time() + (86400 * 30), "/"); // 86400 seconden = 1 dag * 30 dagen
     $lang = $_COOKIE["language"] ?? "nl"; ?> ?>
-<div id="game-container">
+<article id="game-container">
     <h2>kaas: <span id="cookie-counter">0</span></h2>
     <p>kpk --> kaas per klik: <span id="click-power">1</span></p>
 
@@ -24,7 +24,7 @@
     
     <button id="upgrade">Koop Upgrade (Kost: 10 kaasjes)</button>
     <button id="reset">Reset kaasblokjes</button>
-</div>
+</article>
 
 <script>
 
